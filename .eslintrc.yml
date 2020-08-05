@@ -1,0 +1,9 @@
+parser: babel-eslint
+
+plugins: 
+  - babel
+
+env:
+  browser: true
+
+extends: airbnb-base
