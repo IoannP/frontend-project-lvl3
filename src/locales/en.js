@@ -1,10 +1,10 @@
 export default {
   translation: {
-    head: "RSS Reader",
-    lead: "Start reading RSS today! It is easy, it is nicely.",
+    head: 'RSS Reader',
+    lead: 'Start reading RSS today! It is easy, it is nicely.',
     input: {
-      placeholder: "RSS link",
+      placeholder: 'RSS link',
     },
-    button: "Add",
+    button: 'Add',
   },
 };

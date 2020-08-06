@@ -1,0 +1,19 @@
+name: Lint-test
+
+on: 
+  - push
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '13.x'
+      - name: npm install
+        run: make install
+      - name: Running ESLint
+        run: make lint
