@@ -7,9 +7,6 @@ module.exports = {
   output: {
     filename: 'index.js',
   },
-  watchOptions: {
-    ignored: /node_modules/,
-  },
   module: {
     rules: [
       {
@@ -34,7 +31,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'RSS Reader',
+      title: 'RSS Aggregator',
       template: 'template.html',
     }),
   ],
