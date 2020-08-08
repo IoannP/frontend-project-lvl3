@@ -2,7 +2,9 @@
   "name": "rss",
   "version": "0.0.1",
   "description": "RSS aggregator",
-  "scripts": {},
+  "scripts": {
+    "build": "webpack"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IoannP/frontend-project-lvl3.git"
