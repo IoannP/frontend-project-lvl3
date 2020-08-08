@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "RSS aggregator",
   "main": "dist/index.js",
-  "script": {
+  "scripts": {
     "build": "webpack"
   },
   "repository": {
