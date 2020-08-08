@@ -5,15 +5,21 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on:  ubuntu-latest
     
+    strategy:
+      matrix:
+        node-version: [13.x, 14.x]
+
     steps:
       - uses: actions/checkout@v1
-      - name: Setup node
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: '13.x'
-      - name: npm install
-        run: make install
-      - name: Running ESLint
+          node-version: ${{ matrix.node-version }}
+      - name: npm install, build
+        run: |
+          make install
+          make build
+      - name: Run ESLint
         run: make lint

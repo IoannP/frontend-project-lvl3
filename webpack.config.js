@@ -37,7 +37,7 @@ module.exports = {
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
       title: 'RSS Reader',
-      template: './public/index.html',
+      template: 'template.html',
     }),
   ],
 };
