@@ -9,5 +9,5 @@ build:
 	NODE_ENV=production npx webpack
 
  
-develop:
-	npx webpack-dev-server --open
+serve:
+	npm run serve

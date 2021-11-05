@@ -3,7 +3,7 @@ export default {
     head: 'RSS Reader',
     lead: 'Start reading RSS today! It is easy, it is nicely.',
     input: {
-      placeholder: 'RSS link',
+      label: 'RSS link',
     },
     button: 'Add',
   },
