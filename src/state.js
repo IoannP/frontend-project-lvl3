@@ -1,7 +1,7 @@
 export default {
   urls: [],
   form: {
-    isValid: true,
+    isValid: '',
     url: '',
     errors: [],
   },
