@@ -41,6 +41,8 @@
     "@popperjs/core": "^2.10.2",
     "bootstrap": "^5.1.3",
     "i18next": "^21.4.0",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "on-change": "^4.0.1",
+    "yup": "^0.32.11"
   }
 }
