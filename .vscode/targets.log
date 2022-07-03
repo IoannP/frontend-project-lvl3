@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 23 22:04:42 2022
+# Make data base, printed on Sun Jul  3 11:57:30 2022
 
 # Variables
 
@@ -53,7 +55,7 @@ SNAP_DATA = /var/snap/code/99
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:47645
+JOURNAL_STREAM = 8:51422
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -79,7 +81,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 _ = /snap/code/99/usr/share/code/code
 # environment
-MANAGERPID = 1852
+MANAGERPID = 1866
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -95,7 +97,7 @@ PATH = /home/ioann/.local/bin:/home/ioann/.rbenv/plugins/ruby-build/bin:/home/io
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/Ioann:@/tmp/.ICE-unix/2093,unix/Ioann:/tmp/.ICE-unix/2093
+SESSION_MANAGER = local/Ioann:@/tmp/.ICE-unix/2105,unix/Ioann:/tmp/.ICE-unix/2105
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -117,7 +119,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = eaabb2c5b77d4d12ba5e3a53c3029e6c
+INVOCATION_ID = 3458967e16934a1aaedafefc6602680c
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/99/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -129,7 +131,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 13843
+GIO_LAUNCHED_DESKTOP_FILE_PID = 13996
 # automatic
 %F = $(notdir $%)
 # environment
@@ -143,7 +145,7 @@ PWD = /home/ioann/projects/rss
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2055
+SSH_AGENT_PID = 2067
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -197,7 +199,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-0bfe5afd-6784-43e3-b683-9fad3489cfb3.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-6c1a67bc-0430-47c7-a158-a60650764c67.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -283,11 +285,9 @@ LC_ADDRESS = en_GB.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 13896
+VSCODE_PID = 14047
 # variable set hash-table stats:
  
-make: *** No rule to make target 'all'.  Stop.
-
 # Load=137/1024=13%, Rehash=0, Collisions=25/162=15%
 
 # Pattern-specific Variable Values
@@ -369,6 +369,6 @@ install:
 # strcache performance: lookups = 34 / hit rate = 23%
 # hash-table stats:
 # Load=26/8192=0%, Rehash=0, Collisions=1/34=3%
-# Finished Make data base on Thu Jun 23 22:04:42 2022
+# Finished Make data base on Sun Jul  3 11:57:30 2022
 
  

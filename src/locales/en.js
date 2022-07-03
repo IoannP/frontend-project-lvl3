@@ -9,9 +9,17 @@ export default {
       button: 'Add',
       successfullAdition: 'RSS was added successfully',
       validation: {
-        matches: 'Url doesn\'t contain valid rss resource.',
+        invalidRssResouce: 'Url doesn\'t contain valid rss resource.',
         notOneOf: 'Url have been already added.',
-        email: 'Url is not valid',
+        url: 'Url is not valid',
+      },
+    },
+    list: {
+      feeds: {
+        title: 'Feeds',
+      },
+      posts: {
+        title: 'Posts',
       },
     },
   },

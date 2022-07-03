@@ -4,6 +4,7 @@ import * as yup from 'yup';
 import resources from './locales';
 import initView from './view';
 import state from './state';
+import parse from './parser';
 
 export default () => {
   i18next.init({
@@ -14,8 +15,7 @@ export default () => {
 
   yup.setLocale({
     string: {
-      matches: i18next.t('form.validation.matches'),
-      email: i18next.t('form.validation.email'),
+      url: i18next.t('form.validation.url'),
     },
   });
 
@@ -30,7 +30,6 @@ export default () => {
     const form = new FormData(event.target);
 
     yup.string().url()
-      .matches(/.*rss$/)
       .notOneOf(view.urls, i18next.t('form.validation.notOneOf'))
       .validate(form.get('url'))
       .then((url) => {
@@ -38,6 +37,26 @@ export default () => {
         view.form.url = '';
         view.form.errors = [];
         view.form.isValid = true;
+        return url;
+      })
+      .then((url) => fetch(`https://allorigins.hexlet.app/get?url=${encodeURIComponent(url)}`)
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Network response was not ok.');
+        })
+        .then((data) => {
+          const isRss = (/application\/rss\+xml;/).test(data.status.content_type);
+          if (isRss) {
+            return data.contents;
+          }
+          throw new Error(i18next.t('form.validation.invalidRssResouce'));
+        }))
+      .then((html) => parse(html, view.feeds.length))
+      .then(({ feed, posts }) => {
+        view.feeds.push(feed);
+        view.posts.push(...posts);
       })
       .catch((error) => {
         view.form.errors = [];

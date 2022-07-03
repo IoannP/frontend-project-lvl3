@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    </head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  </head>
     <body class="d-flex flex-column min-vh-100" cz-shortcut-listen="true">
-        <main class="flex-grow-1">
-        <section class="container-fluid bg-dark p-5">
-            <div class="container-xl">
-                <div class="row justify-content-center">
-                    <div class="col-md-10 col-lg-10 text-light">
-                        <h1 class="display-3"></h1>
-                        <p class="lead"></p>
-                        <form action class="rss-form">
-                            <div class="row">
-                                <div class="col">
-                                    <input autofocus required name="url" class="form-control rounded-sm form-control-lg w-100" id="url-input" placeholder>
-                                    <label for="url-input"></label>
-                                </div>
-                                <div class="col-auto">
-                                    <button type="submit" aria-label="add" class="btn btn-primary btn-lg px-sm-5 rounded-sm"></button>
-                                </div> 
-                            </div>
-                        </form>
-                    </div>
-                </div>
+      <main class="flex-grow-1">
+      <section class="container-fluid bg-dark p-5">
+        <div class="container-xl">
+          <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-10 text-light">
+              <h1 class="display-3"></h1>
+              <p class="lead"></p>
+                <form action class="rss-form">
+                  <div class="row">
+                    <div class="col">
+                    <input autofocus required name="url" class="form-control rounded-sm form-control-lg w-100" id="url-input" placeholder>
+                    <label for="url-input"></label>
+                  </div>
+                    <div class="col-auto">
+                      <button type="submit" aria-label="add" class="btn btn-primary btn-lg px-sm-5 rounded-sm"></button>
+                    </div> 
+                  </div>
+                </form>
+              </div>
             </div>
-        </section>
+        </div>
+      </section>
+      <section class="container-fluid container-xxl p-5">
+        <div class="row">
+          <div class="col-md-10 col-lg-8 order-1 mx-auto posts"></div>
+          <div class="col-md-10 col-lg-4 mx-auto order-0 order-lg-1 feeds"></div>
+        </div>
+      </section>
     </main>
     <footer></footer>
     </body>

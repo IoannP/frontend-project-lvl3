@@ -5,4 +5,6 @@ export default {
     url: '',
     errors: [],
   },
+  feeds: [],
+  posts: [],
 };
