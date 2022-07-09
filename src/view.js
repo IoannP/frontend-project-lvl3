@@ -3,6 +3,23 @@ import $ from 'jquery';
 
 const label = $('label[for=\'url-input\']');
 
+const onClick = (post, i18next) => (event) => {
+  event.preventDefault();
+  const { title, description, link } = post;
+
+  const [readButton] = $('.modal-footer').find('.btn-primary').get();
+  const [closeButton] = $('.modal-footer').find('.btn-secondary').get();
+  const [xCloseButton] = $('.modal-header').find('button').get();
+
+  $('.modal-title').text(title);
+  $('.modal-body').text(description);
+  readButton.setAttribute('href', link);
+
+  readButton.textContent = i18next.t('modal.read');
+  closeButton.textContent = i18next.t('modal.close');
+  xCloseButton.textContent = '';
+};
+
 export default (state, i18next) => onChange(state, (path, value) => {
   if (path === 'form.isValid') {
     if (value === true) {
@@ -84,10 +101,22 @@ export default (state, i18next) => onChange(state, (path, value) => {
     }
 
     const list = posts.children().find('ul');
-    state.posts.forEach(({ title, description, link }) => {
+    list.empty();
+    state.posts.forEach((post, index) => {
+      const { title, description, link } = post;
+
       const li = document.createElement('li');
       const p = document.createElement('p');
       const a = document.createElement('a');
+      const button = document.createElement('button');
+
+      button.classList.add('btn', 'btn-outline-primary', 'btn-sm');
+      button.setAttribute('data-bs-toggle', 'modal');
+      button.setAttribute('data-bs-target', '#modal');
+      button.setAttribute('type', 'button');
+      button.setAttribute('data-id', index);
+      button.addEventListener('click', onClick(post, i18next));
+      button.textContent = i18next.t('list.posts.button');
 
       a.classList.add('fw-bold');
       a.setAttribute('target', '_blank');
@@ -95,12 +124,13 @@ export default (state, i18next) => onChange(state, (path, value) => {
       a.href = link;
       a.textContent = title;
 
-      li.classList.add('list-group-item', 'border-0', 'border-end-0');
-
       p.classList.add('m-0', 'small', 'text-black-50');
       p.textContent = description;
 
+      li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-start', 'border-0', 'border-end-0');
       li.append(a);
+      li.append(button);
+
       list.append(li);
     });
   }

@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jul  3 11:57:30 2022
+# Make data base, printed on Sat Jul  9 11:24:01 2022
 
 # Variables
 
@@ -31,8 +31,6 @@ SNAP_COMMON = /var/snap/code/common
 # environment
 XDG_SESSION_TYPE = x11
 # environment
-VSCODE_LOG_NATIVE = false
-# environment
 NVM_INC = /home/ioann/.nvm/versions/node/v18.2.0/include/node
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
@@ -51,11 +49,11 @@ CURDIR := /home/ioann/projects/rss
 # environment
 RBENV_SHELL = bash
 # environment
-SNAP_DATA = /var/snap/code/99
+SNAP_DATA = /var/snap/code/100
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:51422
+JOURNAL_STREAM = 8:46899
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -77,11 +75,9 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
-VSCODE_VERBOSE_LOGGING = true
+_ = /snap/code/100/usr/share/code/code
 # environment
-_ = /snap/code/99/usr/share/code/code
-# environment
-MANAGERPID = 1866
+MANAGERPID = 1807
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -89,7 +85,7 @@ LC_NAME = en_GB.UTF-8
 # environment
 VSCODE_CWD = /home/ioann
 # environment
-GSETTINGS_SCHEMA_DIR = /snap/code/99/usr/share/glib-2.0/schemas
+GSETTINGS_SCHEMA_DIR = /snap/code/100/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -97,31 +93,29 @@ PATH = /home/ioann/.local/bin:/home/ioann/.rbenv/plugins/ruby-build/bin:/home/io
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/Ioann:@/tmp/.ICE-unix/2105,unix/Ioann:/tmp/.ICE-unix/2105
+SESSION_MANAGER = local/Ioann:@/tmp/.ICE-unix/2049,unix/Ioann:/tmp/.ICE-unix/2049
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/ioann/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-SNAP = /snap/code/99
+SNAP = /snap/code/100
 # environment
 GOPATH = /home/ioann/
 # environment
 NVM_BIN = /home/ioann/.nvm/versions/node/v18.2.0/bin
 # environment
-SNAP_VERSION = 30d9c6cd
+SNAP_VERSION = 92d25e35
 # environment
 XDG_MENU_PREFIX = gnome-
-# environment
-VSCODE_LOG_STACK = false
 # environment
 DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 3458967e16934a1aaedafefc6602680c
+INVOCATION_ID = 6779303314dc4f819d6356dbc5101efc
 # environment
-GDK_PIXBUF_MODULEDIR = /snap/code/99/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+GDK_PIXBUF_MODULEDIR = /snap/code/100/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -131,13 +125,11 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 13996
+GIO_LAUNCHED_DESKTOP_FILE_PID = 15380
 # automatic
 %F = $(notdir $%)
 # environment
 DISPLAY = :0
-# environment
-VSCODE_PIPE_LOGGING = true
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
@@ -145,7 +137,7 @@ PWD = /home/ioann/projects/rss
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2067
+SSH_AGENT_PID = 2011
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -159,7 +151,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /home/ioann/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
+VSCODE_CODE_CACHE_PATH = /home/ioann/.config/Code/CachedData/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9
 # environment
 LOGNAME = ioann
 # environment
@@ -193,19 +185,17 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # environment
-SNAP_USER_DATA = /home/ioann/snap/code/99
+SNAP_USER_DATA = /home/ioann/snap/code/100
 # environment
 SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
-# environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-6c1a67bc-0430-47c7-a158-a60650764c67.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
 USER = ioann
 # environment
-SNAP_REVISION = 99
+SNAP_REVISION = 100
 # environment
 LC_MONETARY = en_GB.UTF-8
 # makefile
@@ -225,7 +215,7 @@ MAKE_COMMAND := make
 # environment
 LANGUAGE = en_GB:en
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-58f3bf50-1.68.1-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-58f3bf50-1.69.0-main.sock
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile
@@ -285,11 +275,11 @@ LC_ADDRESS = en_GB.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 14047
+VSCODE_PID = 15431
 # variable set hash-table stats:
- 
-# Load=137/1024=13%, Rehash=0, Collisions=25/162=15%
+# Load=132/1024=13%, Rehash=0, Collisions=24/157=15%
 
+ 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
@@ -369,6 +359,6 @@ install:
 # strcache performance: lookups = 34 / hit rate = 23%
 # hash-table stats:
 # Load=26/8192=0%, Rehash=0, Collisions=1/34=3%
-# Finished Make data base on Sun Jul  3 11:57:30 2022
+# Finished Make data base on Sat Jul  9 11:24:01 2022
 
  

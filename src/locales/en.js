@@ -9,7 +9,6 @@ export default {
       button: 'Add',
       successfullAdition: 'RSS was added successfully',
       validation: {
-        invalidRssResouce: 'Url doesn\'t contain valid rss resource.',
         notOneOf: 'Url have been already added.',
         url: 'Url is not valid',
       },
@@ -20,7 +19,16 @@ export default {
       },
       posts: {
         title: 'Posts',
+        button: 'See post',
       },
+    },
+    modal: {
+      read: 'Read',
+      close: 'Close',
+    },
+    errors: {
+      network: 'Url doesn\'t contain valid rss resource.',
+      invalidRSS: 'Network response was not ok. Try again.',
     },
   },
 };
