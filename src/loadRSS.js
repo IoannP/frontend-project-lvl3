@@ -12,4 +12,7 @@ export default (url) => fetch(`https://allorigins.hexlet.app/get?disableCache=tr
       return data.contents;
     }
     throw new Error('Invalid url');
+  })
+  .catch(() => {
+    throw new Error('Network error');
   });
