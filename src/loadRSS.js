@@ -3,12 +3,12 @@ export default (url) => fetch(`https://allorigins.hexlet.app/get?disableCache=tr
     if (response.ok) {
       return response.json();
     }
-    throw new Error('Network response was not ok. Try again.');
+    throw new Error('Network error');
   })
   .then((data) => {
     const isRss = (/application\/rss\+xml;/).test(data.status.content_type);
     if (isRss) {
       return data.contents;
     }
-    throw new Error('Url doesn\'t contain valid rss resource.');
+    throw new Error('Invalid url');
   });

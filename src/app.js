@@ -10,7 +10,7 @@ import loadRSS from './loadRSS';
 
 export default () => {
   i18next.init({
-    lng: 'en',
+    lng: 'ru',
     debug: true,
     resources,
   });
@@ -68,23 +68,36 @@ export default () => {
     yup.string().url()
       .notOneOf(view.urls, i18next.t('form.validation.notOneOf'))
       .validate(form.get('url'))
-      .then(() => {
-        view.urls.push(url);
-        view.form.url = '';
-        view.form.errors = [];
-        view.form.isValid = true;
-      })
       .then(() => loadRSS(url.url))
       .then((html) => parse(html))
       .then(({ feed, posts }) => {
         const feedId = addFeed(feed, url.id, view);
         addPosts(posts, feedId, view);
       })
+      .then(() => {
+        view.urls.push(url);
+        view.form.url = '';
+        view.form.errors = [];
+        view.form.isValid = true;
+      })
       .then(() => updateRSS(url.id))
       .catch((error) => {
         view.form.errors = [];
-        view.form.errors.push(error.message);
         view.form.isValid = false;
+
+        const { message } = error;
+        const [invalidMatch] = /Invalid url|Network error/i.exec(message) || [];
+
+        switch (invalidMatch) {
+          case 'Invalid url':
+            view.form.errors.push(i18next.t('errors.invalidURL'));
+            break;
+          case 'Network error':
+            view.form.errors.push(i18next.t('errors.network'));
+            break;
+          default:
+            view.form.errors.push(message);
+        }
       });
 
     event.preventDefault();
