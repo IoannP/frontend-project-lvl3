@@ -66,7 +66,7 @@ export default () => {
     const url = { id: view.urls.length + 1, url: form.get('url') };
 
     yup.string().url()
-      .notOneOf(view.urls, i18next.t('form.validation.notOneOf'))
+      .notOneOf(view.urls.map((value) => value.url), i18next.t('form.validation.notOneOf'))
       .validate(form.get('url'))
       .then(() => loadRSS(url.url))
       .then((html) => parse(html))
