@@ -1,4 +1,7 @@
 export default (url) => fetch(`https://allorigins.hexlet.app/get?disableCache=true&url=${encodeURIComponent(url)}`)
+  .catch(() => {
+    throw new Error('Network error');
+  })
   .then((response) => {
     if (response.ok) {
       return response.json();
@@ -12,7 +15,4 @@ export default (url) => fetch(`https://allorigins.hexlet.app/get?disableCache=tr
       return data.contents;
     }
     throw new Error('Invalid url');
-  })
-  .catch(() => {
-    throw new Error('Network error');
   });
