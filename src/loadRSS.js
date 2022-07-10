@@ -6,7 +6,8 @@ export default (url) => fetch(`https://allorigins.hexlet.app/get?disableCache=tr
     throw new Error('Network error');
   })
   .then((data) => {
-    const isRss = (/application\/rss\+xml;/).test(data.status.content_type);
+    const isRss = (/application\/rss\+xml;/).test(data.status?.content_type)
+      || /<rss version="2.0">/.test(data.contents);
     if (isRss) {
       return data.contents;
     }
