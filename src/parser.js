@@ -9,11 +9,11 @@ export default (content) => {
     description: getDescription(html),
   };
   const posts = [...html.querySelectorAll('item')].map((item) => {
-    const [link] = item.textContent?.split('\n').filter((value) => value.trim().startsWith('http'));
+    const link = item.textContent?.split('\n').find((value) => value.trim().startsWith('http'))?.trim();
     return {
       title: getTitle(item),
       description: getDescription(item),
-      link: link.trim(),
+      link,
     };
   });
   return { feed, posts };
