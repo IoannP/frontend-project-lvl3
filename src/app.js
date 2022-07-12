@@ -22,14 +22,17 @@ export default () => {
   });
 
   const addFeed = (feedData, urlId, view) => {
-    const feedId = state.feeds.length + 1;
+    const feedId = view.feeds.length + 1;
     const feed = { id: feedId, urlId, ...feedData };
     view.feeds.push(feed);
     return feedId;
   };
 
   const addPosts = (postsData, feedId, view) => {
-    const posts = postsData.map((post) => ({ feedId, ...post }));
+    const postlength = view.posts.length;
+    const posts = postsData.map((post, index) => ({
+      feedId, ...post, isWatched: false, id: index + postlength + 1,
+    }));
     view.posts.push(...posts);
     return posts;
   };
@@ -56,10 +59,13 @@ export default () => {
       }), 5000);
   };
 
-  $('.display-3').text(i18next.t('head'));
-  $('.lead').text(i18next.t('lead'));
+  $('.display-3').get()[0].textContent = i18next.t('head');
+  $('.lead').get()[0].textContent = i18next.t('lead');
   $(':input#url-input').attr('placeholder', i18next.t('form.input.label'));
   $(':button').text(i18next.t('form.button'));
+  $('.modal-footer').find('.btn-primary').get()[0].textContent = i18next.t('modal.read');
+  $('.modal-footer').find('.btn-secondary').get()[0].textContent = i18next.t('modal.close');
+  $('.modal-header').find('button').get()[0].textContent = '';
 
   $('.rss-form').on('submit', (event) => {
     const form = new FormData(event.target);

@@ -3,21 +3,17 @@ import $ from 'jquery';
 
 const label = $('label[for=\'url-input\']');
 
-const onClick = (post, i18next) => (event) => {
-  event.preventDefault();
+const onClick = (state, postId) => (event) => {
+  const post = state.posts.find((pt) => pt.id === Number(postId));
   const { title, description, link } = post;
+  post.isWatched = true;
 
   const [readButton] = $('.modal-footer').find('.btn-primary').get();
-  const [closeButton] = $('.modal-footer').find('.btn-secondary').get();
-  const [xCloseButton] = $('.modal-header').find('button').get();
 
   $('.modal-title').text(title);
   $('.modal-body').text(description);
   readButton.setAttribute('href', link);
-
-  readButton.textContent = i18next.t('modal.read');
-  closeButton.textContent = i18next.t('modal.close');
-  xCloseButton.textContent = '';
+  event.preventDefault();
 };
 
 export default (state, i18next) => onChange(state, (path, value) => {
@@ -103,7 +99,9 @@ export default (state, i18next) => onChange(state, (path, value) => {
     const list = posts.children().find('ul');
     list.empty();
     state.posts.forEach((post, index) => {
-      const { title, description, link } = post;
+      const {
+        id, title, description, link, isWatched,
+      } = post;
 
       const li = document.createElement('li');
       const p = document.createElement('p');
@@ -115,14 +113,25 @@ export default (state, i18next) => onChange(state, (path, value) => {
       button.setAttribute('data-bs-target', '#modal');
       button.setAttribute('type', 'button');
       button.setAttribute('data-id', index);
-      button.addEventListener('click', onClick(post, i18next));
+      button.addEventListener('click', onClick(state, post.id));
       button.textContent = i18next.t('list.posts.button');
 
-      a.classList.add('fw-bold');
+      if (!isWatched) {
+        a.classList.add('fw-bold');
+      } else {
+        a.classList.add('fw-normal', 'link-secondary');
+      }
+      a.setAttribute('data-id', id);
       a.setAttribute('target', '_blank');
       a.setAttribute('rel', 'noopener noreferrer');
       a.href = link;
       a.textContent = title;
+      a.addEventListener('click', (event) => {
+        const el = event.target;
+        const postId = el.dataset.id;
+        const currentPost = state.posts.find((pt) => pt.id === Number(postId));
+        currentPost.isWatched = true;
+      });
 
       p.classList.add('m-0', 'small', 'text-black-50');
       p.textContent = description;
